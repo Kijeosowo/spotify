@@ -11,7 +11,7 @@ A sleek and functional clone of the Spotify mobile app built with React Native a
 📱 Responsive for Android and iOS
 
 Installation
-git clone https://github.com/your-username/spotify-clone-app.git
+git clone https://github.com/Kijeosowo/spotify.git
 cd spotify-clone-app
 npm install
 
