@@ -15,6 +15,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import axios from "axios";
+import ArtistCard from "../components/ArtistCard";
 
 const HomeScreen = () => {
   const [userProfile, setUserProfile] = useState();
@@ -150,7 +151,7 @@ const HomeScreen = () => {
   }, []);
   console.log(topArtist);
   return (
-    <LinearGradient colors={["#191414", "#191414"]} style={{ flex: 1 }}>
+    <LinearGradient colors={["#333", "#333"]} style={{ flex: 1 }}>
       <ScrollView style={{ marginTop: 60, marginLeft: 10 }}>
         {/* <StatusBar barStyle="light-content" /> */}
         <View
@@ -293,6 +294,22 @@ const HomeScreen = () => {
           numColumns={2}
           columnWrapperStyle={{ justifyContent: "space-between" }}
         />
+
+        <Text
+          style={{
+            color: "white",
+            fontSize: 19,
+            fontWeight: "bold",
+            marginHorizontal: "10",
+            marginTop: 10,
+          }}>
+          Your Top Artists
+        </Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {topArtist.map((item, index) => {
+            <ArtistCard item={item} key={index} />;
+          })}
+        </ScrollView>
       </ScrollView>
     </LinearGradient>
   );
